@@ -1,0 +1,11 @@
+.env
+backend/api.http
+MVP.md
+start.sh
+stop.sh
+restart.sh
+reset.sh
+backend/database.db
+**/__pycache__/
+*.pyc
+*.pyo
