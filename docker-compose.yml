@@ -1,9 +1,28 @@
+version: '3.8'
+
 services:
-  backend:
+  bottle:
     build: ./backend
     ports:
       - "5000:5000"
     volumes:
       - ./backend:/app
     environment:
-      - ENV=production
+      - ENV=development
+
+  sveltekit:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "run", "dev"]
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
