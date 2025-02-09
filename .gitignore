@@ -6,6 +6,10 @@ stop.sh
 restart.sh
 reset.sh
 backend/database.db
+backend/src/database.db
 **/__pycache__/
 *.pyc
 *.pyo
+*.http
+*.rest
+venv

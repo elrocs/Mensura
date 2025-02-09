@@ -1,10 +1,12 @@
 from bottle import Bottle, run
 from db import initialize_db, close_db
 
-from api.food_api import food_api
+from api.food import food
 
 # Create an instance of the Bottle application
 app = Bottle()
+
+app.mount('/food', food)
 
 # Route to test the API
 @app.route('/')

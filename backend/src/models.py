@@ -1,4 +1,4 @@
-from peewee import Model, CharField, FloatField, IntegerField
+from peewee import Model, CharField, FloatField
 from db import db  # Importing the database from db.py
 
 class BaseModel(Model):
@@ -7,23 +7,23 @@ class BaseModel(Model):
 
 class Food(BaseModel):
     name = CharField(unique=True)
-    
-    # Macronutrients (per 100g)
-    calories = FloatField()
-    protein = FloatField()
-    carbs = FloatField()
-    fats = FloatField()
-    fiber = FloatField()
-    
-    # Micronutrients (all in mg per 100g)
-    vitamin_a = FloatField(null=True)  # in mg
-    vitamin_c = FloatField(null=True)  # in mg
-    vitamin_d = FloatField(null=True)  # in mg
-    vitamin_e = FloatField(null=True)  # in mg
-    vitamin_k = FloatField(null=True)  # in mg
-    calcium = FloatField(null=True)    # in mg
-    iron = FloatField(null=True)       # in mg
-    magnesium = FloatField(null=True)  # in mg
-    potassium = FloatField(null=True)  # in mg
-    sodium = FloatField(null=True)     # in mg
-    zinc = FloatField(null=True)       # in mg
+
+    # Macronutrients in mg per 100g
+    calories = FloatField()   # Remains in kcal
+    protein = FloatField()    # mg
+    carbs = FloatField()      # mg
+    fats = FloatField()       # mg
+    fiber = FloatField()      # mg
+
+    # Micronutrients (mg or µg as appropriate)
+    vitamin_a = FloatField(null=True)  # µg (micrograms)
+    vitamin_c = FloatField(null=True)  # mg
+    vitamin_d = FloatField(null=True)  # µg
+    vitamin_e = FloatField(null=True)  # mg
+    vitamin_k = FloatField(null=True)  # µg
+    calcium = FloatField(null=True)    # mg
+    iron = FloatField(null=True)       # mg
+    magnesium = FloatField(null=True)  # mg
+    potassium = FloatField(null=True)  # mg
+    sodium = FloatField(null=True)     # mg
+    zinc = FloatField(null=True)       # mg
