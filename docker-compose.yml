@@ -1,25 +1,19 @@
-version: '3.8'
-
 services:
   bottle:
     build: ./backend
     ports:
-      - "5000:5000"
+      - "5000"
     volumes:
       - ./backend:/app
     environment:
       - ENV=development
 
-  sveltekit:
+  nginx:
     build: ./frontend
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
-    command: ["npm", "run", "dev"]
     networks:
       - app-network
 
