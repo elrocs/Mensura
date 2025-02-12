@@ -1,10 +1,4 @@
-.env
-backend/api.http
-MVP.md
-start.sh
-stop.sh
-restart.sh
-reset.sh
+backend/.env
 backend/database.db
 backend/src/database.db
 **/__pycache__/
@@ -12,4 +6,3 @@ backend/src/database.db
 *.pyo
 *.http
 *.rest
-venv

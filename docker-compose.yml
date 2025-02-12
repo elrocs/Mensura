@@ -1,22 +1,38 @@
 services:
-  bottle:
+  backend:
     build: ./backend
-    ports:
+    container_name: bottle
+    expose:
       - "5000"
     volumes:
       - ./backend:/app
-    environment:
-      - ENV=development
+    env_file:
+      - ./backend/.env
+    networks:
+      - nutriplanner
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: vue
+    expose:
+      - "80"
+    networks:
+      - nutriplanner
+    restart: unless-stopped
 
   nginx:
-    build: ./frontend
+    image: nginx:latest
+    container_name: nginx_proxy
     ports:
-      - "5173:5173"
-    environment:
-      - NODE_ENV=development
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
     networks:
-      - app-network
+      - nutriplanner
 
 networks:
-  app-network:
+  nutriplanner:
     driver: bridge
