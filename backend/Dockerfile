@@ -1,8 +1,9 @@
 # Use Python 3.11 as the base image  
 FROM python:3.11  
 
-# Set the working directory  
+# Set the working directory
 WORKDIR /app  
+RUN touch /app/.env
 
 # Copy dependencies and install them  
 COPY requirements.txt .  
