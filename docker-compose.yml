@@ -9,18 +9,18 @@ services:
     env_file:
       - ./backend/.env
     networks:
-      - nutriplanner
+      - schematic
     restart: unless-stopped
 
-  frontend:
-    build: ./frontend
+  web:
+    build: ./web
     container_name: nginx
     ports:
       - "5633:5633"
     networks:
-      - nutriplanner
+      - schematic
     restart: unless-stopped
 
 networks:
-  nutriplanner:
+  schematic:
     driver: bridge
