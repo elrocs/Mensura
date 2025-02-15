@@ -6,8 +6,6 @@ services:
       - "5000"
     volumes:
       - ./backend:/app
-    env_file:
-      - ./backend/.env
     networks:
       - schematic
     restart: unless-stopped
@@ -16,7 +14,7 @@ services:
     build: ./web
     container_name: nginx
     ports:
-      - "5633:5633"
+      - "80:80"
     networks:
       - schematic
     restart: unless-stopped
