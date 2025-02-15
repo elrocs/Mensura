@@ -4,6 +4,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Icon } from '@iconify/vue'
 import { useColorMode } from '@vueuse/core'
 
+import { RouterView } from 'vue-router'
+
 // Pass { disableTransition: false } to enable transitions
 const mode = useColorMode()
 </script>
@@ -31,4 +33,9 @@ const mode = useColorMode()
       </DropdownMenuContent>
     </DropdownMenu>
   </div>
+
+  <div class="flex-grow p-10">
+    <RouterView />
+  </div>
+
 </template>
