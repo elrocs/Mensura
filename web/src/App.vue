@@ -34,7 +34,7 @@ const mode = useColorMode()
     </DropdownMenu>
   </div>
 
-  <div class="flex-grow p-10">
+  <div class="flex-grow p-4 sm:p-6 md:p-8 lg:p-20 w-dvh">
     <RouterView />
   </div>
 

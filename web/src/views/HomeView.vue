@@ -3,8 +3,8 @@
 </script>
 
 <template >
-  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-7 gap-4">
-    <MenuItem class="aspect-square"></MenuItem>
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
+    <MenuItem class="aspect-square column-span-2 row-span-1"></MenuItem>
     <MenuItem class="aspect-square"></MenuItem>
     <MenuItem class="aspect-square"></MenuItem>
     <MenuItem class="aspect-square"></MenuItem>

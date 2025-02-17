@@ -9,6 +9,5 @@
 
 <template>
     <Card>
-        <CardTitle>Yo mandem</CardTitle>
     </Card>
 </template>
