@@ -12,7 +12,7 @@ services:
 
   web:
     build: ./web
-    container_name: nginx
+    container_name: web
     ports:
       - "80:80"
     networks:
