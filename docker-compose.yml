@@ -1,11 +1,11 @@
 services:
-  backend:
-    build: ./backend
-    container_name: bottle
+  nutrition:
+    build: ./services/nutrition
+    container_name: nutrition
     expose:
       - "5000"
     volumes:
-      - ./backend:/app
+      - ./services/nutrition:/app
     networks:
       - schematic
     restart: unless-stopped
