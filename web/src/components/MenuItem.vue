@@ -7,19 +7,18 @@
 
     import { Icon } from '@iconify/vue'
 
-    defineProps<{icon: string}>()
+    defineProps<{icon: string, url: string}>()
 
 </script>
 
 <template>
-    <Card class="relative aspect-square flex items-center justify-center p-4 group cursor-pointer">
-      
-      <Icon :icon="icon" class="w-[65%] h-[65%] text-muted-foreground" />
-  
-      <CardTitle class="absolute bottom-2 right-2 text-muted-foreground text-sm opacity-0 transition-opacity duration-100 group-hover:opacity-100">
-        <slot />
-      </CardTitle>
-  
-    </Card>
-  </template>
+    <router-link :to="url" class="block">
+      <Card class="relative aspect-square flex items-center justify-center p-4 group cursor-pointer transition hover:shadow-md">
+        <Icon :icon="icon" class="w-[65%] h-[65%] text-muted-foreground" />
+        <CardTitle class="absolute bottom-2 right-2 text-muted-foreground text-sm opacity-0 transition-opacity duration-100 group-hover:opacity-100">
+          <slot />
+        </CardTitle>
+      </Card>
+    </router-link>
+</template>
   
