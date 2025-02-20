@@ -1,8 +1,6 @@
 from peewee import Model, CharField, IntegerField, FloatField
 from playhouse.sqlite_ext import SqliteExtDatabase
-
-# Set up the database connection
-db = SqliteExtDatabase('food.db')
+from db import db
 
 class Food(Model):
     name = CharField(unique=True)

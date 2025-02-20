@@ -1,11 +1,11 @@
 services:
   nutrition:
-    build: ./services/nutrition
+    build: ./services/nutrition/app
     container_name: nutrition
     expose:
       - "5000"
     volumes:
-      - ./services/nutrition:/app
+      - ./services/nutrition/data:/app/data
     networks:
       - schematic
     restart: unless-stopped
