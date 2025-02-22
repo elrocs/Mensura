@@ -1,5 +1,4 @@
 from peewee import Model, CharField, IntegerField, FloatField
-from playhouse.sqlite_ext import SqliteExtDatabase
 from db import db
 
 class Food(Model):
