@@ -1,4 +1,0 @@
-bottle
-peewee
-python-dotenv
-requests
