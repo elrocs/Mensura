@@ -1,6 +1,6 @@
 from flask import Flask
-from routes import register_routes
-from db import initialize, close
+from app.routes import register_routes
+from app.db import initialize, close
 
 app = Flask(__name__)
 

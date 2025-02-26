@@ -4,5 +4,3 @@ backend/src/database.db
 **/__pycache__/
 *.pyc
 *.pyo
-*.http
-*.rest

@@ -1,3 +1,4 @@
-from .food import Food
-from .plan import Plan, PlanItem
-from playhouse.sqlite_ext import SqliteExtDatabase
+from app.models.food import Food
+from app.models.plan import Plan, PlanItem
+
+__all__ = ["Food", "Plan", "PlanItem"]

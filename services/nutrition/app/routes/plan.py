@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
-from services.plan import PlanService
+from app.services.plan import PlanService
 
 plan_bp = Blueprint("plan", __name__)
 
-@plan_bp.route('/plan', methods=['GET'])
+@plan_bp.route('/plans', methods=['GET'])
 def get_plans():
     plans = PlanService.get_all()
-    plan_list = [{}]
-    return 
+    plan_list = [{"name": plan.name, "price": plan.price} for plan in plans]
+    return jsonify({"plans": plan_list})

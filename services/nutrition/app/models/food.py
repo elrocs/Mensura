@@ -1,5 +1,5 @@
 from peewee import Model, CharField, IntegerField, FloatField
-from db import db
+from app.db import db
 
 class Food(Model):
     name = CharField(unique=True)

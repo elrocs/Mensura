@@ -1,4 +1,4 @@
-from models import Food
+from app.models.food import Food
 
 class FoodService:
     @staticmethod

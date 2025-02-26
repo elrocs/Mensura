@@ -1,11 +1,12 @@
 from peewee import Model, CharField, FloatField, DateTimeField, ForeignKeyField
 from datetime import datetime
-from db import db
+from app.db import db
 
 from . import Food
 
 class Plan(Model):
     name = CharField(unique=True)
+    price = FloatField()
     created_at = DateTimeField(default=datetime.now)
 
     class Meta:
