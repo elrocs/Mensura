@@ -1,8 +1,11 @@
-from peewee import Model, CharField, FloatField, DateTimeField, ForeignKeyField
 from datetime import datetime
+
+from peewee import CharField, DateTimeField, FloatField, ForeignKeyField, Model
+
 from app.db import db
 
 from . import Food
+
 
 class Plan(Model):
     name = CharField(unique=True)
@@ -11,6 +14,7 @@ class Plan(Model):
 
     class Meta:
         database = db
+
 
 class PlanItem(Model):
     plan = ForeignKeyField(Plan, backref="items", on_delete="CASCADE")

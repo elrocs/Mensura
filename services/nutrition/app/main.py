@@ -1,11 +1,12 @@
 from flask import Flask
+
+from app.db import close, initialize
 from app.routes import register_routes
-from app.db import initialize, close
 
 app = Flask(__name__)
 
 # Load configuration
-app.config.from_pyfile('config.py')
+app.config.from_pyfile("config.py")
 
 # Initialize the database
 initialize()
@@ -13,10 +14,12 @@ initialize()
 # Register routes
 register_routes(app)
 
+
 @app.teardown_appcontext
 def teardown(exception):
     """Close the database connection after each request."""
     close()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True)

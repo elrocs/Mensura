@@ -1,4 +1,5 @@
-from app.models.plan import Plan, PlanItem
+from app.models.plan import Plan
+
 
 class PlanService:
     @staticmethod

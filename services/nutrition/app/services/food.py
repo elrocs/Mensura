@@ -1,4 +1,7 @@
+from peewee import IntegrityError
+
 from app.models.food import Food
+
 
 class FoodService:
     @staticmethod
@@ -27,7 +30,7 @@ class FoodService:
                 magnesium=data.get("magnesium"),
                 potassium=data.get("potassium"),
                 sodium=data.get("sodium"),
-                zinc=data.get("zinc")
+                zinc=data.get("zinc"),
             )
             return new_food
         except IntegrityError:

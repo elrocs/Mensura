@@ -1,5 +1,6 @@
 from flask import Flask
 
+
 def register_routes(app: Flask):
     from app.routes.food import food_bp
     from app.routes.plan import plan_bp
