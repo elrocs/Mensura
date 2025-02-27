@@ -1,6 +1,5 @@
-from flask import Blueprint, jsonify
-
 from app.services.plan import PlanService
+from flask import Blueprint, jsonify
 
 plan_bp = Blueprint("plan", __name__)
 

@@ -1,8 +1,7 @@
 flask
 peewee
 requests
-flake8
-autopep8
+ruff
 pre-commit
 black
 isort

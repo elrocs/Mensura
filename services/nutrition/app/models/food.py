@@ -1,6 +1,5 @@
-from peewee import CharField, FloatField, IntegerField, Model
-
 from app.db import db
+from peewee import CharField, FloatField, IntegerField, Model
 
 
 class Food(Model):

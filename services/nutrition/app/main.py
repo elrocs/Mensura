@@ -1,12 +1,9 @@
-from flask import Flask
-
 from app.db import close, initialize
 from app.routes import register_routes
+from flask import Flask
 
 app = Flask(__name__)
 
-# Load configuration
-app.config.from_pyfile("config.py")
 
 # Initialize the database
 initialize()

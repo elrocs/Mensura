@@ -1,8 +1,7 @@
 from datetime import datetime
 
-from peewee import CharField, DateTimeField, FloatField, ForeignKeyField, Model
-
 from app.db import db
+from peewee import CharField, DateTimeField, FloatField, ForeignKeyField, Model
 
 from . import Food
 

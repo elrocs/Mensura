@@ -8,12 +8,12 @@ class PlanService:
         return Plan.select()
 
     @staticmethod
-    def get():
+    def get(name):
         """Fetch a nutrition plan from the database."""
         return Plan.get_or_none(Plan.name == name.lower())
 
     @staticmethod
-    def remove():
+    def remove(name):
         """Remove a nutrition plan from the database by name."""
         plan = Plan.get_or_none(Plan.name == name.lower())
         if plan:

@@ -1,6 +1,5 @@
-from peewee import IntegrityError
-
 from app.models.food import Food
+from peewee import IntegrityError
 
 
 class FoodService:

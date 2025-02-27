@@ -1,6 +1,5 @@
-from flask import Blueprint, jsonify, request
-
 from app.services.food import FoodService
+from flask import Blueprint, jsonify, request
 
 food_bp = Blueprint("food", __name__)
 
