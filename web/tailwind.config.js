@@ -7,7 +7,7 @@ module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+
   content: {
     files: [
       './pages/**/*.{ts,tsx,vue}',
@@ -17,7 +17,7 @@ module.exports = {
     ],
     extract
   },
-  
+
   theme: {
     container: {
       center: true,

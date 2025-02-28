@@ -1,19 +1,24 @@
+from typing import Any, Dict, Optional
+
 from app.services.food import FoodService
 from flask import Blueprint, jsonify, request
+from flask.typing import ResponseReturnValue
 
-food_bp = Blueprint("food", __name__)
+food_bp: Blueprint = Blueprint("food", __name__)
 
 
 @food_bp.route("/foods", methods=["GET"])
-def get_foods():
+def get_foods() -> ResponseReturnValue:
     foods = FoodService.get_all()
-    food_list = [{"name": food.name, "calories": food.calories} for food in foods]
+    food_list: list[Dict[str, Any]] = [
+        {"name": food.name, "calories": food.calories} for food in foods
+    ]
     return jsonify({"foods": food_list})
 
 
 @food_bp.route("/foods", methods=["POST"])
-def add_food():
-    data = request.json
+def add_food() -> ResponseReturnValue:
+    data: Optional[Dict[str, Any]] = request.json
     if not data:
         return jsonify({"error": "Invalid or missing JSON"}), 400
     try:
@@ -24,19 +29,8 @@ def add_food():
 
 
 @food_bp.route("/foods/<string:name>", methods=["DELETE"])
-def delete_food(name):
+def delete_food(name: str) -> ResponseReturnValue:
     food = FoodService.remove(name)
     if food:
         return jsonify({"message": f"Deleted {food.name}"}), 200
-    return jsonify({"error": "Food not found"}), 404
-
-
-@food_bp.route("/foods/<string:name>", methods=["PUT"])
-def update_food(name):
-    data = request.json
-    if not data:
-        return jsonify({"error": "Invalid or missing JSON"}), 400
-    updated_food = FoodService.update(name, data)
-    if updated_food:
-        return jsonify({"message": f"Updated {updated_food.name}"}), 200
-    return jsonify({"error": "Food not found"}), 404
+    return jsonify({"error": "Food"})

@@ -21,4 +21,3 @@
       </Card>
     </router-link>
 </template>
-  

@@ -1,8 +1,10 @@
+from typing import Optional
+
 from app.db import close, initialize
 from app.routes import register_routes
 from flask import Flask
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 
 # Initialize the database
@@ -13,7 +15,7 @@ register_routes(app)
 
 
 @app.teardown_appcontext
-def teardown(exception):
+def teardown(exception: Optional[BaseException]) -> None:
     """Close the database connection after each request."""
     close()
 

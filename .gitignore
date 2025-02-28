@@ -4,3 +4,5 @@ backend/src/database.db
 **/__pycache__/
 *.pyc
 *.pyo
+.mypy_cache
+.ruff_cache

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 
 const routes = [
-  { 
+  {
     path: '/',
     component: HomeView,
     meta: { title: "Control Room"},
